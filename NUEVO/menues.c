@@ -182,8 +182,8 @@ void menuUsuario(stCelda * arregloUsuActivos, int validos, stUsuario usr, nodoAr
             break;
 
         case 4:
-            recomendarPelis(ArbolPelis, arregloUsuActivos[pos].listaPelis, usr.nombreUsuario); // Busca el genero y director más visto por el usuario y le recomienda las peliculas de los mismos sin repetir las vistas
-            printf("\n\tDesea ver alguna de estas peliculas en este momento(s/n)?: "); // Le permite al usuario ver una pelicula directamente desde las recomendadas sin tener que salir de esta opcion
+            recomendarPelis(ArbolPelis, arregloUsuActivos[pos].listaPelis, usr.nombreUsuario);
+            printf("\n\tDesea ver alguna de estas peliculas en este momento(s/n)?: ");
             fflush(stdin);
             scanf("%c", &ver);
             if(ver=='s')
@@ -195,12 +195,13 @@ void menuUsuario(stCelda * arregloUsuActivos, int validos, stUsuario usr, nodoAr
             break;
 
         case 5:
+
             system("cls");
             mostrarListaPelis(arregloUsuActivos[pos].listaPelis, usr.nombreUsuario);
             printf("\n\tIngrese el ID de la pelicula a borrar de su lista: ");
             fflush(stdin);
             scanf("%i", &idPeli);
-            arregloUsuActivos[pos].listaPelis= borrarPeliVistaXid(arregloUsuActivos[pos].listaPelis,usr.idUsuario,idPeli); // Borra la pelicula indicada de la lista de pelis vistas del usuario
+            arregloUsuActivos[pos].listaPelis= borrarPeliVistaXid(arregloUsuActivos[pos].listaPelis,usr.idUsuario,idPeli);
             printf("\n\tLa pelicula ha sido borrada de su lista\n");
             system("pause");
             repetir=1;
@@ -229,7 +230,7 @@ nodoArbolPelicula * menuAdmin(stCelda** arregloUsuActivos, int * validos, nodoAr
         printf("\n\t 1) GESTIONAR PELICULAS");
         printf("\n\t 2) GESTIONAR USUARIOS");
         printf("\n\t 3) VACIAR ESTRUCTURAS ACTUALES");
-        printf("\n\t 4) RESTAURAR SISTEMA");
+        printf("\n\t 4) REINICIAR SISTEMA");
         printf("\n\t 0) VOLVER AL MENU ANTERIOR");
         printf("\n\n\t INGRESE SU OPCION: ");
         fflush(stdin);
@@ -342,7 +343,7 @@ nodoArbolPelicula *menuAdminPelis(nodoArbolPelicula * ArbolPelis)
     return ArbolPelis;
 }
 
-stCelda * menuAdminUsuarios(stCelda*arregloUsuActivos, int *validos) // Es fn stCelda porque la mayoria de las opciones(Alta, baja, etc modifican el arreglo)
+stCelda * menuAdminUsuarios(stCelda*arregloUsuActivos, int *validos)
 {
 
     int opcion=0, repetir=1;
@@ -416,7 +417,7 @@ void subMenuListados(nodoArbolPelicula*ArbolPelis)
         printf("\n");
         printf("\n\t 1) ORDENADOS POR TITULO"); // LISTA DESDE ARRAY
         printf("\n\t 2) ORDENADOS POR GENERO"); // LISTA DESDE ARRAY
-        printf("\n\t 3) MOSTRAR LISTADO ENTERO(ARBOL)"); // LISTA DESDE ARBOL
+        printf("\n\t 3) MOSTRAR LISTADO ENTERO"); // LISTA DESDE ARBOL
         printf("\n\t 0) VOLVER AL MENU ANTERIOR");
         printf("\n\n\t INGRESE SU OPCION: ");
         fflush(stdin);
@@ -478,8 +479,8 @@ void subMenuMostrarArbol(nodoArbolPelicula * ArbolPelis)
         printf("\n*****************************************************");
         printf("\n");
         printf("\n\t 1) IN ORDER");
+        printf("\n\t 2) POST ORDER");
         printf("\n\t 2) PRE ORDER");
-        printf("\n\t 3) POST ORDER");
         printf("\n\t 0) VOLVER AL MENU ANTERIOR");
         printf("\n\n\t INGRESE SU OPCION: ");
         fflush(stdin);
@@ -490,49 +491,26 @@ void subMenuMostrarArbol(nodoArbolPelicula * ArbolPelis)
 
         case 1:
 
-            if(ArbolPelis)
-            {
-                inOrder(ArbolPelis);
-                printf("\n\tDesea ver otro arbol de peliculas(s/n)?: ");
-                fflush(stdin);
-                scanf("%c", &control);
-            }
-            else
-            {
-                printf("\nEl arbol no existe o ha sido borrado\n");
-                system("pause");
-            }
+            inOrder(ArbolPelis);
+            printf("Desea ver otro arbol de peliculas(s/n)?: ");
+            fflush(stdin);
+            scanf("%c", &control);
             break;
 
         case 2:
-            if(ArbolPelis)
-            {
-                preOrder(ArbolPelis);
-                printf("\n\tDesea ver otro arbol de peliculas(s/n)?: ");
-                fflush(stdin);
-                scanf("%c", &control);
-            }
-            else
-            {
-                printf("El arbol no existe o ha sido borrado\n");
-                system("pause");
-            }
+
+            preOrder(ArbolPelis);
+            printf("Desea ver otro arbol de peliculas(s/n)?: ");
+            fflush(stdin);
+            scanf("%c", &control);
             break;
 
         case 3:
-            if(ArbolPelis)
-            {
-                postOrder(ArbolPelis);
-                printf("\n\tDesea ver otro arbol de peliculas(s/n)?: ");
-                fflush(stdin);
-                scanf("%c", &control);
-            }
-            else
-            {
-                printf("\nEl arbol no existe o ha sido borrado\n");
-                system("pause");
-            }
 
+            postOrder(ArbolPelis);
+            printf("Desea ver otro arbol de peliculas(s/n)?: ");
+            fflush(stdin);
+            scanf("%c", &control);
             break;
 
         }
@@ -545,8 +523,7 @@ void subMenuMostrarArbol(nodoArbolPelicula * ArbolPelis)
 void menumodif(stCelda*arregloUsuActivos, int validos)//Menu para administrador para seleccion de campo a modificar
 {
     int id=modificarUsuario(arregloUsuActivos, validos);
-    if(id<0)
-    {
+    if(id<0){
         printf("\n\tEl usuario no existe o ha sido eliminado\n");
         system("pause");
     }

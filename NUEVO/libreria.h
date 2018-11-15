@@ -78,10 +78,9 @@ int validarUsuExisteArrayId(int id, stCelda*arregloUsuActivos, int validos);
 int validarUsuActivo(int id, stCelda*arregloUsuActivos, int validos);
 int validarIdUsuAndPeli(int idUsr, int idPeli);
 
-
 // FUNCION DE CARGA INICIAL
-void menuPrincipal();
 int cargaInicial(nodoArbolPelicula * ArbolPelis, stCelda*arregloUsuActivos, int *validos);
+void menuPrincipal();
 
 
 // FUNCIONES QUE TRABAJAN SOBRE PELICULAS
@@ -98,16 +97,8 @@ void ordenacionSeleccion(stPelicula arregloPelis[], int validosPelis);
 int posicionMenor(stPelicula arregloPelis[], int pos, int validosPelis);
 int validarPeliExiste(char nombrePelicula[]);
 void mostrarArregloPelis(stPelicula arregloPelis[], int validos);
-void verPelicula(char nombreUsuario[], stCelda*arregloUsuActivos, int validos, nodoArbolPelicula*ArbolPelis);
-void cargarPeliAUser(stCelda*arregloUsuActivos,int validos, char nombreUsuario[],nodoListaPelicula* Peli);
-int validarPeliExiste(char nombrePeli[]);
-int buscarPelixNombre(nodoArbolPelicula* ArbolPelis, char PeliBuscada[]);
-nodoArbolPelicula* modificarPeliEnArbol(nodoArbolPelicula * ArbolPelis,stPelicula auxPeli);
-int CantidadPelisActivas();
-nodoArbolPelicula*PasaPeliculasDeArchivoToArbol(nodoArbolPelicula*ArbolPelis);
 
-
-// FUNCIONES DE SUBMENUES
+// FUNCIONES DE SUBMENUES // Menu principal en main
 void menuUsuario(stCelda * arregloUsuActivos, int validos, stUsuario usr, nodoArbolPelicula * ArbolPelis);
 nodoArbolPelicula * menuAdmin();
 nodoArbolPelicula* menuAdminPelis();
@@ -121,6 +112,7 @@ void subMenuMostrarArbol(nodoArbolPelicula * ArbolPelis);
 
 
 // FUNCIONES AUXILIARES //
+
 void PelisxUsuarioArchivoToADL(stCelda*arregloUsu, int posicion, nodoArbolPelicula * ArbolPelis);//Carga de Peliculas vistas por usuario a arreglo de listas
 void actualizarPelisVistas(stCelda*arregloUsuActivos, int validos);//Carga de peliculas vistas a archivo
 void mostrarPeliculas(); // Muestra los datos ingresados para ir verificando el funcionamiento del programa
@@ -129,8 +121,8 @@ void mostrarArregloPelis(stPelicula arregloPelis[], int validosPelis); // Usada 
 int PelisVistasTotales(stCelda*arregloUsuActivos, int validos);
 int cantRegistrosTotales();
 
-
 // ***** FUNCIONES DE LISTAS ******
+
 nodoListaPelicula* inicLista();
 nodoListaPelicula* crearNodoPeli(stPelicula Peli);
 nodoListaPelicula* agregarNodoPpio(nodoListaPelicula* listaPelis, nodoListaPelicula* nuevoNodo);
@@ -140,7 +132,6 @@ nodoListaPelicula* agregarNodoEnOrden(nodoListaPelicula* listaPelis, nodoListaPe
 void imprimirNodoPelis(stPelicula nodoPeli);
 void mostrarListaPelis(nodoListaPelicula * lista, char nombreUsuario[]);
 nodoListaPelicula* borrarPeliPorId(nodoListaPelicula*listaPelis, int id);
-
 
 // ***** FUNCIONES DE ARBOLES ******
 nodoArbolPelicula * inicArbol();
@@ -152,14 +143,19 @@ void postOrder(nodoArbolPelicula*Arbol);
 stPelicula buscarPeliculaID(nodoArbolPelicula*Arbol,int id);
 nodoArbolPelicula*borrarNodoArbolPeli(nodoArbolPelicula*Arbol,stPelicula P);
 nodoArbolPelicula*balanceoArbol(stPelicula arregloDePelis[], int primero, int ultimo);
-nodoListaPelicula*borrarPelisVistas(nodoListaPelicula*lista);
-nodoArbolPelicula*borrarNodoArbol(nodoArbolPelicula*ArbolPelis, int idPeli);
-nodoArbolPelicula*nodoMasIzq(nodoArbolPelicula*ArbolPelis);
-nodoArbolPelicula*nodoMasDer(nodoArbolPelicula*ArbolPelis);
-nodoArbolPelicula*borrarArbol(nodoArbolPelicula*ArbolPelis);
+
+// ***** FUNCIONES TP2 PELICULAS ******
+void verPelicula(char nombreUsuario[], stCelda*arregloUsuActivos, int validos, nodoArbolPelicula*ArbolPelis);
+void cargarPeliAUser(stCelda*arregloUsuActivos,int validos, char nombreUsuario[],nodoListaPelicula* Peli);
+int validarPeliExiste(char nombrePeli[]);
+int buscarPelixNombre(nodoArbolPelicula* ArbolPelis, char PeliBuscada[]);
+nodoArbolPelicula* modificarPeliEnArbol(nodoArbolPelicula * ArbolPelis,stPelicula auxPeli);
+
+int CantidadPelisActivas();
+nodoArbolPelicula*PasaPeliculasDeArchivoToArbol(nodoArbolPelicula*ArbolPelis);
 
 
-// ***** FUNCIONES QUE TRABAJAN SOBRE USUARIOS *****
+// ***** FUNCIONES DE TP2 USUARIOS *****
 stCelda* borrarArregloUsu(stCelda*arregloUsuActivos, int *validos);
 int cantUsuariosActivos(); // Cuenta la cantidad inicial de usuarios activos en el archivo
 int cantUsuariosInactivos(); // Cuenta la cantidad inicial de usuarios inactivos en el archivo
@@ -185,10 +181,9 @@ int validarUsuExisteNombre(char nombre[], stCelda*arregloUsuActivos, int validos
 void encriptacionPass(char pass[], int mEncriptada[2][5]); //Funcion para encriptacion de password
 void productoDeMatrices(int Mat[2][2],int Pass[2][5],int Prod[2][5]); //Funcion para Multiplicacion de Matrices
 void desencriptacionPass(int mEncriptada[2][5], char pass[]);//Desencripta el pass para mostrarlo
-void recomendarPelis(nodoArbolPelicula*ArbolPelis, nodoListaPelicula*PelisVistas, char nombre[]); // Busca el genero y el director
-// más vistos por el usuario pasando los generos y directores vistos a un arreglo y contando las ocurrencias, es decir las veces
-// que se registran los mismos en su lista de pelis vistas y en base a eso efectua la recomendación
-void generoMasVisto(nodoListaPelicula*lista, char *); // Busca el genero más bisto
+
+void recomendarPelis(nodoArbolPelicula*ArbolPelis, nodoListaPelicula*PelisVistas, char nombre[]);
+void generoMasVisto(nodoListaPelicula*lista, char *);
 int buscarMayorOcurrencia(int ocurrencias[], int validos);
 int agregarString(char arregloNombres[][20], char nombre[], int validos);
 int buscarPosString(char arregloNombres[][20], char nombre[], int validos);
@@ -198,7 +193,11 @@ nodoListaPelicula * borrarPeliVistaXid(nodoListaPelicula*PelisVistas, int idUsu,
 nodoListaPelicula*borrarUnaPeliVistaLista(nodoListaPelicula*PelisVistas, int idPeli);
 void borrarPeliVistaArchivo(int idUsr, int idPeli);
 
-
+nodoListaPelicula* borrarPelisVistas(nodoListaPelicula*lista);
+nodoArbolPelicula*borrarNodoArbol(nodoArbolPelicula*ArbolPelis, int idPeli);
+nodoArbolPelicula*nodoMasIzq(nodoArbolPelicula*ArbolPelis);
+nodoArbolPelicula*nodoMasDer(nodoArbolPelicula*ArbolPelis);
+nodoArbolPelicula*borrarArbol(nodoArbolPelicula*ArbolPelis);
 
 
 

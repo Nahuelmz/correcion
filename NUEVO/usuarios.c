@@ -157,7 +157,9 @@ int validacionPass(stCelda*arregloUsuActivos,int validos, char nombre[], char pa
             }
 
         }
+
     }
+
     return coincidencia;
 }
 
@@ -396,7 +398,7 @@ stCelda* altaUsuarios(stCelda*arregloUsuActivos, int *validos)// Funcion general
             printf("\nIngrese un nombre de usuario alfabetico(solo letras): ");
             fflush(stdin);
             gets(usuAux.nombreUsuario);
-            i=0;
+             i=0;
             Exito=0;
 
             while (Exito==0 && i<4)
@@ -488,8 +490,7 @@ stCelda* altaUsuarios(stCelda*arregloUsuActivos, int *validos)// Funcion general
                     fflush(stdin);
                     gets(usuAux.pais);
                     validacionPais=validarTipoChar(usuAux.pais); // Filtra que tome solo letras
-                }
-                while(validacionPais!=1);
+                }while(validacionPais!=1);
 
                 usuAux.eliminado=0; // Se asigna flag negativo como valor predeterminado
 
@@ -648,25 +649,23 @@ void mostrarUsuariosActivos(stCelda*arregloUsuActivos, int validos) // Pasa a la
 {
     int i=0;
     system("cls");
-    if(validos>0)
+    if(validos>0){
+    printf("El listado actual de usuarios activos es el siguiente:\n\n");
+    while(i<validos)
     {
-        printf("El listado actual de usuarios activos es el siguiente:\n\n");
-        while(i<validos)
+        if(arregloUsuActivos[i].usr.eliminado==0)
         {
-            if(arregloUsuActivos[i].usr.eliminado==0)
-            {
-                imprimirUsuarioConPass(arregloUsuActivos[i].usr);
-                Sleep(600);
-                mostrarListaPelis(arregloUsuActivos[i].listaPelis, arregloUsuActivos[i].usr.nombreUsuario);
+            imprimirUsuarioConPass(arregloUsuActivos[i].usr);
+            Sleep(600);
+            mostrarListaPelis(arregloUsuActivos[i].listaPelis, arregloUsuActivos[i].usr.nombreUsuario);
 
-            }
-            i++;
         }
+        i++;
     }
-    else
-    {
-        printf("\nNo hay datos de usuarios activos para imprimir. El arreglo no existe o ha sido borrado.\n");
-    }
+}
+else{
+    printf("No hay datos de usuarios activos para imprimir\n");
+}
 }
 
 void mostrarUsuariosArchivo(char archiUsu[], int id)// Busca y muestra el usuario pasado por ID desde el archivo(activo o no).
@@ -814,8 +813,7 @@ int modificarUsuario(stCelda*arregloUsuActivos, int validos)//Modificacion de us
         imprimirUsuarioConPass(arregloUsuActivos[pos].usr); // Muestra toda la info del usuario
     }
 
-    else
-    {
+    else{
         id=-1;
     }
 
@@ -864,7 +862,7 @@ int cambiarNombreUsu(int id, int pos, stCelda*arregloUsuActivos)
 }
 
 
- int cambiarPassUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite cambiar el password del usuario
+int cambiarPassUsu(int id, int pos, stCelda*arregloUsuActivos)
 {
     int flag=0;
     stUsuario usuAux;
@@ -936,7 +934,7 @@ int cambiarNombreUsu(int id, int pos, stCelda*arregloUsuActivos)
 }
 
 
-int cambiarAnioUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite cambiar el anio de nacimiento del usuario
+int cambiarAnioUsu(int id, int pos, stCelda*arregloUsuActivos)
 {
     int flag=0;
     stUsuario usuAux;
@@ -976,7 +974,7 @@ int cambiarAnioUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite cambia
 }
 
 
-int cambiarGeneroUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite cambiar el genero del usuario
+int cambiarGeneroUsu(int id, int pos, stCelda*arregloUsuActivos)
 {
     int flag=0;
     stUsuario usuAux;
@@ -1016,7 +1014,7 @@ int cambiarGeneroUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite camb
 }
 
 
-int cambiarPaisUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite cambiar el pais del usuario
+int cambiarPaisUsu(int id, int pos, stCelda*arregloUsuActivos)
 {
     int flag=0;
     stUsuario usuAux;
@@ -1057,7 +1055,7 @@ int cambiarPaisUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite cambia
 }
 
 
-int cambiarEstadoUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite marcar al usuario como activo o eliminado
+int cambiarEstadoUsu(int id, int pos, stCelda*arregloUsuActivos)
 {
     int flag=0;
     stUsuario usuAux;
@@ -1097,7 +1095,7 @@ int cambiarEstadoUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite marc
 }
 
 
-int cambiarPermisosUsu(int id, int pos, stCelda*arregloUsuActivos) // Permite modificar el nivel de permisos entre usuario y administrador
+int cambiarPermisosUsu(int id, int pos, stCelda*arregloUsuActivos)
 {
     int flag=0;
     stUsuario usuAux;

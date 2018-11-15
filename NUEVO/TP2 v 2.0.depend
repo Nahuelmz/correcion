@@ -181,10 +181,10 @@
 1542091900 source:c:\users\valeria\desktop\tp 3.0 posta\usuarios.c
 	"libreria.h"
 
-1542092331 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\cargainicial.c
+1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\cargainicial.c
 	"libreria.h"
 
-1542092331 c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\libreria.h
+1542249002 c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\libreria.h
 	<stdio.h>
 	<stdlib.h>
 	"string.h"
@@ -192,19 +192,19 @@
 	<conio.h>
 	<windows.h>
 
-1542092331 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\main.c
+1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\main.c
 	"libreria.h"
 
-1542092331 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\menues.c
+1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\menues.c
 	"libreria.h"
 
-1542113017 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\peliculas.c
+1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\peliculas.c
 	"libreria.h"
 
-1542139089 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\usuarios.c
+1542298465 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\usuarios.c
 	"libreria.h"
 
-1542112330 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\pelisxuser.c
+1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-master\pelisxuser.c
 	"libreria.h"
 
 1542121474 source:c:\users\nmz\desktop\tp-v-3.2-master\cargainicial.c
@@ -256,58 +256,6 @@
 1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-rama-nahuel\tp-v-3.2-master\pelisxuser.c
 	"libreria.h"
 
-1542249002 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-rama-nahuel\tp-v-3.2-master\usuarios.c
-	"libreria.h"
-
-1542293115 source:c:\users\valeria\desktop\nuevo\cargainicial.c
-	"libreria.h"
-
-1542298435 c:\users\valeria\desktop\nuevo\libreria.h
-	<stdio.h>
-	<stdlib.h>
-	"string.h"
-	"ctype.h"
-	<conio.h>
-	<windows.h>
-
-1542293116 source:c:\users\valeria\desktop\nuevo\main.c
-	"libreria.h"
-
-1542297955 source:c:\users\valeria\desktop\nuevo\menues.c
-	"libreria.h"
-
-1542293116 source:c:\users\valeria\desktop\nuevo\peliculas.c
-	"libreria.h"
-
-1542297955 source:c:\users\valeria\desktop\nuevo\pelisxuser.c
-	"libreria.h"
-
-1542296395 source:c:\users\valeria\desktop\nuevo\usuarios.c
-	"libreria.h"
-
-1542280566 source:c:\users\arte1\downloads\fuentes viejas\nuevo\cargainicial.c
-	"libreria.h"
-
-1542280566 c:\users\arte1\downloads\fuentes viejas\nuevo\libreria.h
-	<stdio.h>
-	<stdlib.h>
-	"string.h"
-	"ctype.h"
-	<conio.h>
-	<windows.h>
-
-1542280566 source:c:\users\arte1\downloads\fuentes viejas\nuevo\main.c
-	"libreria.h"
-
-1542280566 source:c:\users\arte1\downloads\fuentes viejas\nuevo\menues.c
-	"libreria.h"
-
-1542280566 source:c:\users\arte1\downloads\fuentes viejas\nuevo\peliculas.c
-	"libreria.h"
-
-1542280566 source:c:\users\arte1\downloads\fuentes viejas\nuevo\pelisxuser.c
-	"libreria.h"
-
-1542301065 source:c:\users\arte1\downloads\fuentes viejas\nuevo\usuarios.c
+1542298256 source:c:\users\arte1\downloads\fuentes viejas\tp-v-3.2-rama-nahuel\tp-v-3.2-master\usuarios.c
 	"libreria.h"
 
